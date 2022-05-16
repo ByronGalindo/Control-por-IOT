@@ -7,7 +7,7 @@ header{
   font-size: 12px;
 }
 body{
-    display: hidden;
+    display: grid;
     height: 100%;
     text-align: center;
     place-items: center;

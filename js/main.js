@@ -154,39 +154,3 @@ function configurar(){
   dbrefaltura.set(altura);
   dbrefguarda.set(guarda);
 }
-
-//Login
-function ingresar() {
-  var email = document.getElementById('email2').value;
-  var contrasena = document.getElementById('contrasena2').value;
-  let element = document.getElementById("body");
-  firebase.auth().signInWithEmailAndPassword(email, contrasena)
-      .then((user) => {
-          // Signed in
-          // ...
-          console.log('sesión iniciada');
-          element.setAttribute("display", "grid");
-      })
-      .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          element.setAttribute("display", "none");
-      });
-}
-
-
-//Registro
-function registrar() {
-  var email = document.getElementById('email').value;
-  var contrasena = document.getElementById('contrasena').value;
-
-  firebase.auth().createUserWithEmailAndPassword(email, contrasena)
-      .then((user) => {
-          console.log('Usuario registrado!');
-      })
-      .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;           
-          console.log(errorMessage);
-      });
-}
