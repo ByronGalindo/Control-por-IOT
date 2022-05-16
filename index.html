@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sistema de llenado de un tanque de agua</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./images/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+  </head>
+  <header>
+    <div class="Flex-Cabecera">
+        <div class="Flex-Cabecera-img"><img src="https://www.usco.edu.co/imagen-institucional/ocre/universidad-surcolombiana-50.png"></div>
+        <div class="Flex-Cabecera-nombre"><h1>Control a Distancia del Llenado de un Tanque con IoT Mediante Interfaz de Usuario Web.</h1></div>
+      </div>
+    <div id="register">
+        <h3>Registro de usuarios</h3>
+        <input id="email" type="email" placeholder="Ingrese email">
+        <input id="contrasena" type="password" placeholder="Ingrese contraseña">
+        <button onclick="registrar()">Registrar</button>
+     </div>
+     <div id="session">
+        <h3>Ingreso de usuarios</h3>
+        <input id="email2" type="email" placeholder="Ingrese email">
+        <input id="contrasena2" type="password" placeholder="Ingrese contraseña">
+        <button onclick="ingresar()">Ingresar</button>
+    </div>
+     <h2></h2>
+  </header>
+  <body id="body">
+    <div class="datos">
+        <div class="Item-Nivel" id="Item-Nivel">
+            <div class="label">
+                <h2>Nivel Actual</h2>
+            </div>
+            <div class="value">
+                <h2 id="nivelActual"></h2><h2> %</h2>
+            </div>
+        </div>
+        <div class="Item-Temp" id="Item-Temp">
+            <div class="label">
+                <h2>Temperatura</h2>
+            </div>
+            <div class="value">
+                <h2 id="Temperatura"></h2><h2> °C</h2>
+            </div>         
+        </div>
+    </div>
+    <div class="Flex-Parametros">
+        <div class="Flex-Set">
+            <form class="Configuracion" name="configuracion">
+            <h2>Configuración</h2>
+            <h2>Parámetros del tanque</h2>
+            <p>
+                <h3>Altura(Cm) : <input type="text" name="altura" style="text-align:center"> </h3>
+                <h3>Area(Cm^2) : <input type="text" name="area" style="text-align:center"> </h3>
+                <h3>Guarda(Cm) : <input type="text" name="guarda" style="text-align:center"> </h3>
+            </p>  
+            <button class="btn btn-info" onclick="configurar()">Configurar</button>
+            </form> 
+        </div>
+        <div class="Flex-btn">
+            <h3> </h3>
+            <h2>Sistema</h2>
+            <div class="Toogle">
+                <label class="switchBtn" >
+                    <input type="checkbox"name="Sistema" id="Sistema">
+                    <div class="slide round">Sistema</div>
+                </label>
+            </div>
+            <div>
+                <h2>OFF/ON</h2>
+            </div>
+        </div>
+    </div>
+    <div class="Flex-Modos">
+        <div class="Flex-Auto"> 
+            <h2>AUTOMÁTICO</h2>
+            <img src="./images/auto.jpg" height="100px" alt="AUTOMÁTICO">
+        </div>
+        <div class="Toogle">
+            <label class="switchBtn" >
+                <input type="checkbox"name="Modo" id="Modo">
+                <div class="slide round">Modo</div>
+            </label>
+        </div>
+        <div class="Flex-Manu"> 
+            <h2>MANUAL</h2>
+            <img src="./images/manu.jpg" height="100px" alt="MANUAL">
+        </div>
+    </div>
+    <div class="Flex-Estados">
+        <div class="Flex-Llenando" id="Llenado">
+            <h2>LLENANDO</h2>
+        </div>
+        <div class="Flex-Lleno" id="Lleno">
+            <h2>LLENO</h2>
+        </div>
+        <div class="Flex-Drenado" id="Drenado">
+            <h2>DRENANDO</h2>
+        </div>
+    </div>
+    <div id="slider" class="Flex-Slider">
+        <div class="Flex-Slider-Nivel">
+            <h2>Nivel Deseado (%)</h2>
+            <form action="#">
+                <input type="range" id="temperatura" min="0" max="100">
+                <h2>
+                    <span id="temp">0</span>
+                </h2>
+            </form>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+  <footer>
+    <div class="Integrantes">
+        <strong>INTEGRANTES</strong><br> 
+        Pedro Alexander Contreras Andrade (20171155226)<br>
+        Byron Hernando Galindo Suárez (20171155352)<br>
+        Juan Pablo Tierradentro Aya (20171156428)<br>
+      </h2>
+      </div>
+</footer>
+</html>
